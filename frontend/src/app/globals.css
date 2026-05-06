@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #f5f3ee;
+  color: #1a1a2e;
+  font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans SC', sans-serif;
+  min-height: 100vh;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f0ede6;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c4b998;
+  border-radius: 3px;
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-accent text-white px-5 py-2.5 rounded-md font-medium
+           hover:bg-accent-dark transition-colors duration-200
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-secondary {
+    @apply border border-accent text-accent px-5 py-2.5 rounded-md font-medium
+           hover:bg-accent hover:text-white transition-colors duration-200;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-2.5 border border-border rounded-md
+           bg-white text-ink placeholder-muted
+           focus:outline-none focus:ring-2 focus:ring-accent-light focus:border-transparent
+           transition-all duration-200;
+  }
+
+  .select-field {
+    @apply w-full px-4 py-2.5 border border-border rounded-md
+           bg-white text-ink appearance-none cursor-pointer
+           focus:outline-none focus:ring-2 focus:ring-accent-light focus:border-transparent;
+  }
+
+  .card {
+    @apply bg-white rounded-lg border border-border shadow-sm
+           hover:shadow-md transition-shadow duration-200;
+  }
+}
